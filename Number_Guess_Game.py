@@ -1,20 +1,21 @@
 import random
 
-print("Welcome to my 'Number Guessing Game', Player t:)")
+print("Welcome to my 'Number Guessing Game', Player :)")
 
 def game():
     while True:
         # Getting valid inputs from user-side
         while True:
             try:
-                start = int(input("Enter the START number: "))
-                stop = int(input("Enter the STOP number: "))
-                bet = input("Number of tries you bet to win (Enter '000' for infinite tries): ")
+                start = int(input("Enter the STARTING number: "))
+                stop = int(input("Enter the ENDING number: "))
 
                 if start >= stop:
-                    print("START must be less than STOP. Try again.\n")
+                    print("STARTING must be less than ENDING. Try again.\n")
                     continue
 
+                bet = input("Number of tries you bet to win (Enter '000' for infinite tries): ")
+                
                 if bet != '000':
                     bet = int(bet)
                     if bet <= 0:
@@ -43,12 +44,12 @@ def game():
                 user_ans = int(input("Enter your guess, player :) = "))
                 attempts_used += 1
 
-                if user_ans == random_no:
+                if (user_ans == random_no):
                     print("Congrats! You've guessed correctly! :)")
                     print(f"You guessed it in {attempts_used} attempts.\n")
                     break
 
-                elif user_ans < random_no:
+                elif (user_ans < random_no):
                     print("Too low!")
 
                 else:
